@@ -9,7 +9,6 @@ namespace GetIPFromQQ
 {
     class Program
     {
-        static int count = 0;
         static void Main(string[] args)
         {
             Console.WriteLine("正在检测当前网卡信息...");
