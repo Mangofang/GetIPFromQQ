@@ -15,6 +15,8 @@
   <img src="https://github.com/Mangofang/GetIPFromQQ/blob/master/Image/QQ%E6%88%AA%E5%9B%BE20240203033529.png">
 </p>
 
+更多详细内容可以转博客：https://blog.purewind.top/index.php/2024/02/03/getipfromqq/
+
 ## 使用指南
 
 1. 运行软件，选择监听的网卡
