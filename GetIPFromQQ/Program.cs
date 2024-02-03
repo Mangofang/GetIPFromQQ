@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using SharpPcap;
 using SharpPcap.LibPcap;
 using PacketDotNet;
@@ -49,12 +49,11 @@ namespace GetIPFromQQ
         {
             var ent = EthernetPacket.ParsePacket(LinkLayers.Ethernet, e.Packet.Data);
             var ip = ent.PayloadPacket;
-            var len = ent.PayloadPacket.TotalPacketLength;
             var udp = ip.PayloadPacket;
-            var data = BitConverter.ToString(udp.PayloadData);
+            var data_len = udp.PayloadData.Length;
             Match match = Regex.Match(ip.ToString(), @"DestinationAddress=(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})");
             string DestinationAddress = match.Groups[1].Value;
-            if (len == 100 && !DestinationAddress.Contains("192.168"))
+            if (data_len == 72 && !DestinationAddress.Contains("192.168"))
             {
                 Console.WriteLine("已捕获目标IP：" + DestinationAddress);
             }
